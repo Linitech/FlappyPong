@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour
 {
+
+    public float xSpeed = 0.01f;
     private float direction = 1;
+
 
     bool goingUp;
     bool goingDown;
@@ -30,27 +33,12 @@ public class Bird : MonoBehaviour
 
         //var velocity = rb2d.velocity; //creates and declare variables for velocity
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.Space))
         {
             rb2d.AddForce(Vector2.up * direction);
         }
 
-        if (xMove == true)
-        {
-            transform.position = new Vector2(transform.position.x + speed, transform.position.y);
-        }
-        else
-        {
-            transform.position = new Vector2(transform.position.x - speed, transform.position.y);
-        }
-        if (transform.position.x >= Border)
-        {
-            xMove = false;
-        }
-        else if (transform.position.x <= -Border)
-        {
-            xMove = true;
-        }
+       
 
 
 
